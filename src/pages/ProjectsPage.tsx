@@ -152,11 +152,24 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenVideo }) => {
                     <div>
                       {/* Project Image Banner */}
                       <div className="relative aspect-[16/10] overflow-hidden bg-black border-b border-[#1C1C1C]">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
+                        {videoItem?.videoPreviewUrl ? (
+                          <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            poster={project.image}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          >
+                            <source src={videoItem.videoPreviewUrl} type="video/mp4" />
+                          </video>
+                        ) : (
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                        )}
                         <div className="absolute top-3 left-3 flex gap-2">
                           <span className="px-2.5 py-1 bg-[#0A0A0A]/90 backdrop-blur-sm border border-[#2A2A2A] text-white text-[10px] font-mono uppercase tracking-wider font-semibold">
                             {project.category}

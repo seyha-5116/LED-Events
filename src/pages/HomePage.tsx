@@ -176,37 +176,51 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenVideo, onInquirySubmit
                 className="group bg-[#0D0D0D] border border-[#222222] hover:border-white transition-colors overflow-hidden flex flex-col justify-between"
               >
                 <div>
-                  <div className="relative aspect-[16/10] overflow-hidden bg-black border-b border-[#1C1C1C]">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4 flex gap-2">
-                      <span className="px-3 py-1 bg-[#0A0A0A]/90 backdrop-blur-sm border border-[#2A2A2A] text-white text-[11px] font-mono uppercase tracking-wider font-semibold">
-                        {project.category}
-                      </span>
-                      <span className="px-2 py-1 bg-[#0A0A0A]/90 backdrop-blur-sm border border-[#2A2A2A] text-[#888888] text-[11px] font-mono">
-                        {project.year}
-                      </span>
-                    </div>
+                  {(() => {
+                    const videoItem = MEDIA_ITEMS.find(
+                      (m) => m.type === 'video' && m.title.toLowerCase().includes(project.title.toLowerCase().split(' ')[0])
+                    );
+                    return (
+                      <div className="relative aspect-[16/10] overflow-hidden bg-black border-b border-[#1C1C1C]">
+                        {videoItem?.videoPreviewUrl ? (
+                          <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            poster={project.image}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          >
+                            <source src={videoItem.videoPreviewUrl} type="video/mp4" />
+                          </video>
+                        ) : (
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                        )}
+                        <div className="absolute top-4 left-4 flex gap-2">
+                          <span className="px-3 py-1 bg-[#0A0A0A]/90 backdrop-blur-sm border border-[#2A2A2A] text-white text-[11px] font-mono uppercase tracking-wider font-semibold">
+                            {project.category}
+                          </span>
+                          <span className="px-2 py-1 bg-[#0A0A0A]/90 backdrop-blur-sm border border-[#2A2A2A] text-[#888888] text-[11px] font-mono">
+                            {project.year}
+                          </span>
+                        </div>
 
-                    {(() => {
-                      const videoItem = MEDIA_ITEMS.find(
-                        (m) => m.type === 'video' && m.title.toLowerCase().includes(project.title.toLowerCase().split(' ')[0])
-                      );
-                      if (!videoItem?.videoUrl) return null;
-                      return (
-                        <button
-                          onClick={() => onOpenVideo(videoItem.videoUrl!, project.title)}
-                          className="absolute bottom-4 right-4 p-3 bg-white text-black hover:bg-[#E5E5E5] transition-transform hover:scale-110 shadow-lg cursor-pointer"
-                          title="Watch Production Video"
-                        >
-                          <Play className="w-4 h-4 fill-black" />
-                        </button>
-                      );
-                    })()}
-                  </div>
+                        {videoItem?.videoUrl && (
+                          <button
+                            onClick={() => onOpenVideo(videoItem.videoUrl!, project.title)}
+                            className="absolute bottom-4 right-4 p-3 bg-white text-black hover:bg-[#E5E5E5] transition-transform hover:scale-110 shadow-lg cursor-pointer"
+                            title="Watch Production Video"
+                          >
+                            <Play className="w-4 h-4 fill-black" />
+                          </button>
+                        )}
+                      </div>
+                    );
+                  })()}
 
                   <div className="p-6">
                     <span className="text-[11px] font-mono text-[#737373] uppercase tracking-wider block mb-1">
