@@ -4,6 +4,7 @@ import { ArrowUpRight, MapPin, Calendar, Maximize2 } from 'lucide-react';
 import { PROJECTS } from '../data/ledEventsData';
 import { Project, EventCategory } from '../types';
 import { ProjectDetailModal } from './ProjectDetailModal';
+import AutoplayVideo from './AutoplayVideo';
 
 interface ProjectsSectionProps {
   onOpenInquiryWithProject: (projectTitle: string) => void;
@@ -70,12 +71,20 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             >
               {/* Image Container */}
               <div className="relative h-64 w-full overflow-hidden bg-[#050505]">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
-                  loading="lazy"
-                />
+                {project.videoPreviewUrl ? (
+                  <AutoplayVideo
+                    src={project.videoPreviewUrl}
+                    poster={project.image}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                    loading="lazy"
+                  />
+                )}
 
                 {/* Badges */}
                 <div className="absolute top-4 left-4 flex items-center gap-2">

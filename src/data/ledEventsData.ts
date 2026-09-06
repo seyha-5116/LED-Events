@@ -203,6 +203,7 @@ export const PROJECTS: Project[] = [
     stageSize: 'W40m × H16m',
     description: 'Greet Music Festival is an annual large-scale concert event featuring top performers, high-energy music, and an unforgettable festival atmosphere. LED Events delivered complete turnkey production including the flagship 40-meter wide festival stage, massive curved LED backdrop, and integrated concert lighting.',
     image: 'https://ledevents.asia/storage/section-items/gallery/eyCykokGP4iHBbpKgIwJe1lkwaoYsyoDuFEm546d.jpg',
+    videoPreviewUrl: '/video-clip-1.mp4',
     gallery: [
       'https://ledevents.asia/storage/section-items/gallery/eyCykokGP4iHBbpKgIwJe1lkwaoYsyoDuFEm546d.jpg',
       'https://ledevents.asia/storage/section-items/gallery/Xo15EIVNwZNt13CaP20LU80MDBDURjh7JGBwby8T.jpg',
@@ -233,6 +234,7 @@ export const PROJECTS: Project[] = [
     stageSize: 'W36m × H14m',
     description: 'The ISKA Krud Kun Khmer Tour Concert combines the intensity of Kun Khmer combat sports with live music performances, creating a powerful and engaging entertainment experience that celebrates Cambodian culture and spirit.',
     image: 'https://ledevents.asia/storage/section-items/gallery/P0Lj463JDq0FP20ti7EuSzOQG8JUaggfLWYU1IWs.jpg',
+    videoPreviewUrl: '/video-clip-2.mp4',
     gallery: [
       'https://ledevents.asia/storage/section-items/gallery/P0Lj463JDq0FP20ti7EuSzOQG8JUaggfLWYU1IWs.jpg',
       'https://ledevents.asia/storage/section-items/gallery/m5HKfKR9s2nEs4dHd0DPKXzWCGEy59aQPO40Dag3.jpg',
@@ -262,6 +264,7 @@ export const PROJECTS: Project[] = [
     stageSize: 'W28m × H10m',
     description: 'Nico’s greatest hits and breathtaking stage performances at the "SHARE THE LOVE" Solo Concert. This was more than just a concert; it was a movement of kindness where 100% of all ticket proceeds were donated to support brave soldiers and displaced families.',
     image: 'https://ledevents.asia/storage/section-items/gallery/PPvQ16L7qza7k4jdfM838Q7IkK72EMakfIwUl6vd.png',
+    videoPreviewUrl: '/video-clip-1.mp4',
     gallery: [
       'https://ledevents.asia/storage/section-items/gallery/PPvQ16L7qza7k4jdfM838Q7IkK72EMakfIwUl6vd.png',
       'https://ledevents.asia/storage/section-items/gallery/bsc6TqCipPtsdX1VksVBMB4yrPHA12R97GJ70vMq.jpg',
@@ -291,6 +294,7 @@ export const PROJECTS: Project[] = [
     stageSize: 'W32m × H11m',
     description: 'Boostrong King of the Ring Kun Khmer highlights top-tier Kun Khmer fighters in thrilling battles, delivering an exciting and culturally rich experience for thousands of live spectators and millions of television viewers.',
     image: 'https://ledevents.asia/storage/section-items/gallery/W3ks2SD0RTtuGTdpLkmXagC58NOU6XxQMeAgaVWS.png',
+    videoPreviewUrl: '/video-clip-2.mp4',
     gallery: [
       'https://ledevents.asia/storage/section-items/gallery/W3ks2SD0RTtuGTdpLkmXagC58NOU6XxQMeAgaVWS.png',
       'https://ledevents.asia/storage/section-items/gallery/Qd0IIBkQC2eA2frQ5sJibR15ZBmPGJK7V1azZ8yA.png',
@@ -319,6 +323,7 @@ export const PROJECTS: Project[] = [
     category: 'Corporate',
     description: 'High-profile corporate and VIP live presentation at Koh Pich. LED Events provided ultra-crisp indoor LED screens, calibrated for high-definition keynote graphics, live camera feeds, and brand prestige.',
     image: 'https://ledevents.asia/storage/section-items/gallery/xaO1AZFXy4CJ3sCIGckWwWVKb6vX4Rpekcw8x0jl.jpg',
+    videoPreviewUrl: '/video-clip-1.mp4',
     gallery: [
       'https://ledevents.asia/storage/section-items/gallery/xaO1AZFXy4CJ3sCIGckWwWVKb6vX4Rpekcw8x0jl.jpg',
       'https://ledevents.asia/storage/section-items/gallery/hEVxOJuKgGBqTHn1U1K4wqHAsDdB5dEsZL6nGlcr.jpg',
@@ -345,6 +350,7 @@ export const PROJECTS: Project[] = [
     category: 'Concert',
     description: 'High-energy national talent contest and live musical showcase. LED Events was entrusted with complete staging, intelligent lighting sequences, live broadcast audio, and monumental LED backdrops across consecutive seasons.',
     image: 'https://ledevents.asia/storage/section-items/gallery/kFn1U1ktLk82RQYp1Z7BwYm1ASqRZVv23HVadViZ.jpg',
+    videoPreviewUrl: '/video-clip-2.mp4',
     gallery: [
       'https://ledevents.asia/storage/section-items/gallery/kFn1U1ktLk82RQYp1Z7BwYm1ASqRZVv23HVadViZ.jpg',
       'https://ledevents.asia/storage/section-items/gallery/fdFAvhMtowfcQ9rzngNzyu12rvjZVcfKLooBzLjy.jpg',
@@ -744,7 +750,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     year: '2025',
     thumbnail: 'https://ledevents.asia/storage/section-items/1QzXabMPBxMCZ1s03F7NRWC7WNL2wjLEAu2W3KYu.jpg',
     videoUrl: 'https://www.youtube.com/embed/PcFhDdR-OLQ?si=tbq3RTHG7ZgCL9jr',
-    videoPreviewUrl: '/video-clip-3.mp4',
+    videoPreviewUrl: '/video-clip-1.mp4',
     description: 'Demonstrating how LED Events synchronizes timecoded DMX lighting, line-array acoustics, and NovaStar video walls with millisecond precision.'
   },
   {

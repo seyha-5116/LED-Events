@@ -11,7 +11,8 @@ import {
 } from 'lucide-react';
 import { PageHero } from '../components/PageHero';
 import { SeoHead } from '../components/SeoHead';
-import { PROJECTS, MEDIA_ITEMS } from '../data/ledEventsData';
+import { PROJECTS } from '../data/ledEventsData';
+import AutoplayVideo from '../components/AutoplayVideo';
 import { fadeUpVariants } from '../utils/animations';
 
 interface ProjectsPageProps {
@@ -135,10 +136,6 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenVideo }) => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project) => {
-                const videoItem = MEDIA_ITEMS.find(
-                  (m) => m.type === 'video' && m.title.toLowerCase().includes(project.title.toLowerCase().split(' ')[0])
-                );
-
                 return (
                   <motion.div
                     key={project.id}
@@ -151,17 +148,12 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenVideo }) => {
                     <div>
                       {/* Project Image Banner */}
                       <div className="relative aspect-[16/10] overflow-hidden bg-black border-b border-[#1C1C1C]">
-                        {videoItem?.videoPreviewUrl ? (
-                          <video
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
+                        {project.videoPreviewUrl ? (
+                          <AutoplayVideo
+                            src={project.videoPreviewUrl}
                             poster={project.image}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                          >
-                            <source src={videoItem.videoPreviewUrl} type="video/mp4" />
-                          </video>
+                          />
                         ) : (
                           <img
                             src={project.image}
