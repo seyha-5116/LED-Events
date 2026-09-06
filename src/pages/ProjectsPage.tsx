@@ -4,7 +4,6 @@ import { motion } from 'motion/react';
 import { 
   ArrowRight, 
   Search, 
-  Play, 
   MapPin, 
   Calendar, 
   Layers, 
@@ -12,7 +11,8 @@ import {
 } from 'lucide-react';
 import { PageHero } from '../components/PageHero';
 import { SeoHead } from '../components/SeoHead';
-import { PROJECTS, MEDIA_ITEMS } from '../data/ledEventsData';
+import { PROJECTS } from '../data/ledEventsData';
+import AutoplayVideo from '../components/AutoplayVideo';
 import { fadeUpVariants } from '../utils/animations';
 
 interface ProjectsPageProps {
@@ -136,10 +136,6 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenVideo }) => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project) => {
-                const videoItem = MEDIA_ITEMS.find(
-                  (m) => m.type === 'video' && m.title.toLowerCase().includes(project.title.toLowerCase().split(' ')[0])
-                );
-
                 return (
                   <motion.div
                     key={project.id}
@@ -152,11 +148,19 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenVideo }) => {
                     <div>
                       {/* Project Image Banner */}
                       <div className="relative aspect-[16/10] overflow-hidden bg-black border-b border-[#1C1C1C]">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
+                        {project.videoPreviewUrl ? (
+                          <AutoplayVideo
+                            src={project.videoPreviewUrl}
+                            poster={project.image}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                        ) : (
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                        )}
                         <div className="absolute top-3 left-3 flex gap-2">
                           <span className="px-2.5 py-1 bg-[#0A0A0A]/90 backdrop-blur-sm border border-[#2A2A2A] text-white text-[10px] font-mono uppercase tracking-wider font-semibold">
                             {project.category}
@@ -165,16 +169,6 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenVideo }) => {
                             {project.year}
                           </span>
                         </div>
-
-                        {videoItem && videoItem.videoUrl && (
-                          <button
-                            onClick={() => onOpenVideo(videoItem.videoUrl!, project.title)}
-                            className="absolute bottom-3 right-3 p-2.5 bg-white text-black hover:bg-[#E5E5E5] transition-transform hover:scale-110 shadow-lg cursor-pointer"
-                            title="Watch Production Video"
-                          >
-                            <Play className="w-3.5 h-3.5 fill-black" />
-                          </button>
-                        )}
                       </div>
 
                       <div className="p-6">

@@ -19,6 +19,7 @@ import { HowWeWorkSection } from '../components/HowWeWorkSection';
 import { SmartInquirySection } from '../components/SmartInquirySection';
 import { SeoHead } from '../components/SeoHead';
 import { SERVICES, PROJECTS, WHY_US_STRENGTHS, MEDIA_ITEMS, BLOG_POSTS, COMPANY_INFO } from '../data/ledEventsData';
+import AutoplayVideo from '../components/AutoplayVideo';
 import { fadeUpVariants, staggerContainerVariants } from '../utils/animations';
 
 interface HomePageProps {
@@ -177,11 +178,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenVideo, onInquirySubmit
               >
                 <div>
                   <div className="relative aspect-[16/10] overflow-hidden bg-black border-b border-[#1C1C1C]">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
+                    {project.videoPreviewUrl ? (
+                      <AutoplayVideo
+                        src={project.videoPreviewUrl}
+                        poster={project.image}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    ) : (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    )}
                     <div className="absolute top-4 left-4 flex gap-2">
                       <span className="px-3 py-1 bg-[#0A0A0A]/90 backdrop-blur-sm border border-[#2A2A2A] text-white text-[11px] font-mono uppercase tracking-wider font-semibold">
                         {project.category}
@@ -190,22 +199,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenVideo, onInquirySubmit
                         {project.year}
                       </span>
                     </div>
-
-                    {(() => {
-                      const videoItem = MEDIA_ITEMS.find(
-                        (m) => m.type === 'video' && m.title.toLowerCase().includes(project.title.toLowerCase().split(' ')[0])
-                      );
-                      if (!videoItem?.videoUrl) return null;
-                      return (
-                        <button
-                          onClick={() => onOpenVideo(videoItem.videoUrl!, project.title)}
-                          className="absolute bottom-4 right-4 p-3 bg-white text-black hover:bg-[#E5E5E5] transition-transform hover:scale-110 shadow-lg cursor-pointer"
-                          title="Watch Production Video"
-                        >
-                          <Play className="w-4 h-4 fill-black" />
-                        </button>
-                      );
-                    })()}
                   </div>
 
                   <div className="p-6">

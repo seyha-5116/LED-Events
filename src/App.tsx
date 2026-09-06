@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'motion/react';
+import { pageTransitionVariants } from './utils/animations';
 
 // Layout & Global Components
 import { Navbar } from './components/Navbar';
@@ -29,6 +31,86 @@ import { ContactPage } from './pages/ContactPage';
 // Data & Types
 import { INITIAL_INQUIRIES } from './data/ledEventsData';
 import { EventInquiry } from './types';
+
+type VideoHandler = (url: string, title: string) => void;
+type InquiryHandler = (newInquiry: EventInquiry) => void;
+
+function AnimatedRoutes({
+  onOpenVideo,
+  onInquirySubmitted,
+}: {
+  onOpenVideo: VideoHandler;
+  onInquirySubmitted: InquiryHandler;
+}) {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        variants={pageTransitionVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
+        <Routes location={location}>
+          {/* Home */}
+          <Route
+            path="/"
+            element={
+              <HomePage
+                onOpenVideo={onOpenVideo}
+                onInquirySubmitted={onInquirySubmitted}
+              />
+            }
+          />
+
+          {/* Services */}
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:slug" element={<ServiceDetailPage />} />
+
+          {/* Projects */}
+          <Route path="/projects" element={<ProjectsPage onOpenVideo={onOpenVideo} />} />
+          <Route
+            path="/projects/:slug"
+            element={<ProjectDetailPage onOpenVideo={onOpenVideo} />}
+          />
+
+          {/* Why Us */}
+          <Route path="/why-us" element={<WhyUsPage />} />
+
+          {/* Media Hub & Sub-pages */}
+          <Route path="/media" element={<MediaPage onOpenVideo={onOpenVideo} />} />
+          <Route
+            path="/media/videos"
+            element={<MediaVideosPage onOpenVideo={onOpenVideo} />}
+          />
+          <Route path="/media/gallery" element={<MediaGalleryPage />} />
+          <Route path="/media/behind-the-scenes" element={<MediaBtsPage />} />
+
+          {/* Blog Hub, Categories & Articles */}
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/event-guides" element={<BlogCategoryPage />} />
+          <Route path="/blog/led-knowledge" element={<BlogCategoryPage />} />
+          <Route path="/blog/production-tips" element={<BlogCategoryPage />} />
+          <Route path="/blog/:slug" element={<BlogDetailPage />} />
+
+          {/* Specialized Products */}
+          <Route path="/products" element={<ProductsPage />} />
+
+          {/* Contact & Quotation */}
+          <Route
+            path="/contact"
+            element={<ContactPage onInquirySubmitted={onInquirySubmitted} />}
+          />
+
+          {/* 404 Fallback */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
 
 export default function App() {
   const [isAdminOpen, setIsAdminOpen] = useState(false);
@@ -81,66 +163,10 @@ export default function App() {
 
         {/* Dynamic Route Pages */}
         <main className="flex-grow">
-          <Routes>
-            {/* Home */}
-            <Route
-              path="/"
-              element={
-                <HomePage
-                  onOpenVideo={handleOpenVideo}
-                  onInquirySubmitted={handleInquirySubmitted}
-                />
-              }
-            />
-
-            {/* Services */}
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/:slug" element={<ServiceDetailPage />} />
-
-            {/* Projects */}
-            <Route
-              path="/projects"
-              element={<ProjectsPage onOpenVideo={handleOpenVideo} />}
-            />
-            <Route
-              path="/projects/:slug"
-              element={<ProjectDetailPage onOpenVideo={handleOpenVideo} />}
-            />
-
-            {/* Why Us */}
-            <Route path="/why-us" element={<WhyUsPage />} />
-
-            {/* Media Hub & Sub-pages */}
-            <Route
-              path="/media"
-              element={<MediaPage onOpenVideo={handleOpenVideo} />}
-            />
-            <Route
-              path="/media/videos"
-              element={<MediaVideosPage onOpenVideo={handleOpenVideo} />}
-            />
-            <Route path="/media/gallery" element={<MediaGalleryPage />} />
-            <Route path="/media/behind-the-scenes" element={<MediaBtsPage />} />
-
-            {/* Blog Hub, Categories & Articles */}
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/blog/event-guides" element={<BlogCategoryPage />} />
-            <Route path="/blog/led-knowledge" element={<BlogCategoryPage />} />
-            <Route path="/blog/production-tips" element={<BlogCategoryPage />} />
-            <Route path="/blog/:slug" element={<BlogDetailPage />} />
-
-            {/* Specialized Products */}
-            <Route path="/products" element={<ProductsPage />} />
-
-            {/* Contact & Quotation */}
-            <Route
-              path="/contact"
-              element={<ContactPage onInquirySubmitted={handleInquirySubmitted} />}
-            />
-
-            {/* 404 Fallback */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+          <AnimatedRoutes
+            onOpenVideo={handleOpenVideo}
+            onInquirySubmitted={handleInquirySubmitted}
+          />
         </main>
 
         {/* Footer with Multi-Page Links */}

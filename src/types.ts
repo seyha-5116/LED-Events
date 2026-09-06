@@ -11,6 +11,7 @@ export interface Project {
   stageSize?: string;
   description: string;
   image: string;
+  videoPreviewUrl?: string;
   gallery: string[];
   highlights: string[];
   technicalSpecs?: {
