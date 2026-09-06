@@ -208,16 +208,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenVideo, onInquirySubmit
                             {project.year}
                           </span>
                         </div>
-
-                        {videoItem?.videoUrl && (
-                          <button
-                            onClick={() => onOpenVideo(videoItem.videoUrl!, project.title)}
-                            className="absolute bottom-4 right-4 p-3 bg-white text-black hover:bg-[#E5E5E5] transition-transform hover:scale-110 shadow-lg cursor-pointer"
-                            title="Watch Production Video"
-                          >
-                            <Play className="w-4 h-4 fill-black" />
-                          </button>
-                        )}
                       </div>
                     );
                   })()}

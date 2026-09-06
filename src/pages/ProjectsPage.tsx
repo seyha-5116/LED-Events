@@ -4,7 +4,6 @@ import { motion } from 'motion/react';
 import { 
   ArrowRight, 
   Search, 
-  Play, 
   MapPin, 
   Calendar, 
   Layers, 
@@ -178,16 +177,6 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onOpenVideo }) => {
                             {project.year}
                           </span>
                         </div>
-
-                        {videoItem && videoItem.videoUrl && (
-                          <button
-                            onClick={() => onOpenVideo(videoItem.videoUrl!, project.title)}
-                            className="absolute bottom-3 right-3 p-2.5 bg-white text-black hover:bg-[#E5E5E5] transition-transform hover:scale-110 shadow-lg cursor-pointer"
-                            title="Watch Production Video"
-                          >
-                            <Play className="w-3.5 h-3.5 fill-black" />
-                          </button>
-                        )}
                       </div>
 
                       <div className="p-6">
