@@ -1,0 +1,8 @@
+{
+  "name": "LED Events",
+  "description": "The Most Reliable Event Production System in Cambodia. Premium concert, festival, and corporate event production.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

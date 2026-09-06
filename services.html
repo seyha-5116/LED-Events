@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="icon" type="image/png" href="https://ledevents.asia/images/logo2.png">
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/super-build/ckeditor.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <title>LED Events Cambodia</title>
+
+    <meta name="description"
+        content="LED Events provides high-quality LED screen rental and sales in Cambodia for events, concerts, exhibitions, supermarkets, and advertising displays. Reliable, bright, and professional LED display solutions.">
+
+    <meta name="keywords"
+        content="LED screen Cambodia, LED display rental, event LED screen, supermarket LED display, LED wall Cambodia, stage LED screen, advertising LED display, LED events production, LED screen Phnom Penh">
+
+    <meta name="author" content="LED Events">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://ledevents.asia/services">
+
+    
+    <meta property="og:title" content="LED Events Cambodia | LED Display Solutions">
+    <meta property="og:description"
+        content="Professional LED screen rental and sales for events, concerts, supermarkets, and advertising in Cambodia.">
+    <meta property="og:image" content="https://ledevents.asia/images/og-image.jpg">
+    <meta property="og:url" content="https://ledevents.asia/services">
+    <meta property="og:type" content="website">
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LED Events Cambodia">
+    <meta name="twitter:description"
+        content="LED screen rental & sales for events, supermarkets, concerts, and advertising.">
+    <meta name="twitter:image" content="https://ledevents.asia/images/og-image.jpg">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+        @font-face {
+            font-family: 'LED-MEDIA-Head';
+            src: url("https://ledevents.asia/fonts/LED-MEDIA-English-letter-head.ttf") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'LED-MEDIA-Body';
+            src: url("https://ledevents.asia/fonts/LED-MEDIA-English-Typo.ttf") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'LED-MEDIA-Body', sans-serif;
+        }
+
+        body {
+            font-family: 'LED-MEDIA-Body', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'LED-MEDIA-Head', sans-serif;
+            font-weight: 700;
+        }
+
+        span{
+            font-family: 'LED-MEDIA-Head' sans-serif;
+        }
+
+        p, a, li, button {
+            font-family: 'LED-MEDIA-Body', sans-serif;
+        }
+
+        .nav-link {
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        /* Animated underline — grows from center */
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -17px;
+            height: 2px;
+            width: 0;
+            background: white;
+            transition: 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen text-white bg-black">
+
+    
+    <div id="mobileMenu"
+        class="fixed top-0 right-0 w-full h-full bg-white z-[100] translate-x-full transition-transform duration-300 overflow-y-auto">
+
+        <!-- Header row -->
+        <div class="flex items-center justify-between p-5 border-b">
+            <p class="font-bold text-xl">Menu</p>
+            <button onclick="toggleMenu()" class="text-2xl text-black">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Nav items -->
+        <div class="p-6 space-y-8 text-black">
+
+            <!-- HOME -->
+            <div>
+                <button onclick="toggleSub('home-menu')" class="text-3xl font-bold w-full text-left">
+                    Home
+                </button>
+                <div id="home-menu" class="submenu hidden mt-4 flex flex-col gap-3 text-lg pl-3">
+                    <a href="/#why-us">Why Us</a>
+                    <a href="/#services">Our Service</a>
+                    <a href="/#features">Features</a>
+                    <a href="/#how-we-work">How We Work</a>
+                </div>
+            </div>
+
+            <!-- SERVICES -->
+            <div>
+                <button onclick="toggleSub('services-menu')" class="text-3xl font-bold w-full text-left">
+                    Services
+                </button>
+                <div id="services-menu" class="submenu hidden mt-4 flex flex-col gap-3 text-lg pl-3">
+                    <a href="/services#led-screen-rental">LED Screen Rental</a>
+                    <a href="/services#stage-rental">Stage Rental</a>
+                    <a href="/services#sound-system">Sound System</a>
+                    <a href="/services#lighting-production">Lighting Production</a>
+                    <a href="/services#full-event-production">Full Event Production</a>
+                </div>
+            </div>
+
+            <!-- PROJECTS -->
+            <div>
+                <button onclick="toggleSub('projects-menu')" class="text-3xl font-bold w-full text-left">
+                    Projects
+                </button>
+                <div id="projects-menu" class="submenu hidden mt-4 flex flex-col gap-3 text-lg pl-3">
+                    <a href="https://ledevents.asia/projects">All Projects</a>
+                    <a href="https://ledevents.asia/projects?type=concert-events">Concert Events</a>
+                    <a href="https://ledevents.asia/projects?type=corporate-events">Corporate Events</a>
+                    <a href="https://ledevents.asia/projects?type=festival-events">Festival Events</a>
+                    <a href="https://ledevents.asia/projects?type=outdoor-events">Outdoor Events</a>
+                </div>
+            </div>
+
+            <!-- WHY US -->
+            <a href="/why-us" class="text-3xl font-bold block" onclick="closeMenu()">
+                Why Us
+            </a>
+
+            <!-- MEDIA -->
+            <div>
+                <button onclick="toggleSub('media-menu')" class="text-3xl font-bold w-full text-left">
+                    Media
+                </button>
+                <div id="media-menu" class="submenu hidden mt-4 flex flex-col gap-3 text-lg pl-3">
+                    <a href="/media#event_video">Event Videos</a>
+                    <a href="/media#gallery">Gallery</a>
+                    <a href="/media#behind_the_scenes">Behind the Scenes</a>
+                </div>
+            </div>
+
+            <!-- BLOG -->
+            <div>
+                <button onclick="toggleSub('blog-menu')" class="text-3xl font-bold w-full text-left">
+                    Blog
+                </button>
+                <div id="blog-menu" class="submenu hidden mt-4 flex flex-col gap-3 text-lg pl-3">
+                    <a href="https://ledevents.asia/blog">All Articles</a>
+                    <a href="https://ledevents.asia/blog?type=Event%20Guides">Event Guides</a>
+                    <a href="https://ledevents.asia/blog?type=LED%20Knowledge">LED Knowledge</a>
+                    <a href="https://ledevents.asia/blog?type=Production%20Tips">Production Tips</a>
+                </div>
+            </div>
+
+            <!-- PRODUCTS -->
+            <div>
+                <button onclick="toggleSub('products-menu')" class="text-3xl font-bold w-full text-left">
+                    Products
+                </button>
+                <div id="products-menu" class="submenu hidden mt-4 flex flex-col gap-3 text-lg pl-3">
+                    <a href="https://envystage.com/">Fog & Effects</a>
+                    <a href="https://ledmedia.com.kh/" target="_blank" rel="noopener noreferrer">
+                        LED Display Sales
+                    </a>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <a href="/contact" class="text-3xl font-bold block" onclick="closeMenu()">
+                Contact
+            </a>
+
+        </div>
+    </div>
+
+    
+    <div class="absolute top-0 left-0 w-full z-50">
+
+        <div>
+            <!-- HEADER TOP -->
+            <div class="w-full lg:border-none border-white border-b-1">
+                <div class="max-w-7xl mx-auto py-5 px-4 flex items-center justify-between">
+                    <a href="https://ledevents.asia" class="flex lg:-ml-10 items-center gap-3">
+                        <img src="https://ledevents.asia/images/logo.png" alt="LED Events Logo" class="h-10">
+                        <p class="uppercase "> <span class="font-bold">led</span> events </p>
+                    </a>
+                    
+                    <div class="block lg:hidden">
+                        <i onclick="toggleMenu()" class="fa-solid fa-bars text-2xl cursor-pointer"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            
+            <div class="w-full bg-black border-b border-gray-800 relative hidden lg:block">
+                <div class="w-full bg-black border-b border-gray-800 relative hidden lg:block">
+                    <div class="max-w-7xl mx-auto flex items-center justify-between -px-4 py-4">
+
+                        
+
+                        <!-- MENU -->
+                        <ul class="flex items-center gap-6 text-white capitalize -ml-8">
+
+                            <!-- HOME -->
+                            <li class="group">
+                                <a href="/" class="nav-link">home</a>
+                                <!-- MEGA MENU DROPDOWN -->
+                                <div
+                                    class="absolute -ml-8 left-0 top-full w-full bg-black/95 border-t border-gray-800
+                                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                                        transition-all duration-300 z-50">
+                                    
+                                    <div class="max-w-7xl mx-auto px-1 py-6 flex items-start gap-10 text-white">
+                                        <a href="https://ledevents.asia#why-us" class="hover:opacity-70">Why Us</a>
+                                        <a href="https://ledevents.asia#services" class="hover:opacity-70">Our Service</a>
+                                        <a href="https://ledevents.asia#features" class="hover:opacity-70">Features</a>
+                                        <a href="https://ledevents.asia#how-we-work" class="hover:opacity-70">How We
+                                            Work</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- SERVICES -->
+                            <li class="group">
+                                <a class="nav-link" href="https://ledevents.asia/services">services</a>
+                                <div
+                                    class="absolute -ml-8 left-0 top-full w-full bg-black/95 border-t border-gray-800
+                                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                                        transition-all duration-300 z-50">
+                                    <div class="max-w-7xl mx-auto px-1 py-6 flex items-start gap-10 text-white">
+                                        <a href="/services#led-screen-rental" class="hover:opacity-70">LED Screen
+                                            Rental</a>
+                                        <a href="/services#stage-rental" class="hover:opacity-70">Stage Rental</a>
+                                        <a href="/services#sound-system" class="hover:opacity-70">Sound System</a>
+                                        <a href="/services#lighting-production" class="hover:opacity-70">Lighting
+                                            Production</a>
+                                        <a href="/services#full-event-production" class="hover:opacity-70">Full Event
+                                            Production</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- PROJECTS -->
+                            <li class="group">
+                                <a class="nav-link" href="/projects">projects</a>
+                                <div
+                                    class="absolute -ml-8 left-0 top-full w-full bg-black/95 border-t border-gray-800
+                                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                                        transition-all duration-300 z-50">
+                                    <div class="max-w-7xl mx-auto px-1 py-6 flex items-start gap-10 text-white">
+                                        <a href="https://ledevents.asia/projects" class="hover:opacity-70">All Projects</a>
+                                        <a href="https://ledevents.asia/projects?type=concert-events"
+                                            class="hover:opacity-70">Concert Events</a>
+                                        <a href="https://ledevents.asia/projects?type=corporate-events"
+                                            class="hover:opacity-70">Corporate Events</a>
+                                        <a href="https://ledevents.asia/projects?type=festival-events"
+                                            class="hover:opacity-70">Festival Events</a>
+                                        <a href="https://ledevents.asia/projects?type=outdoor-events"
+                                            class="hover:opacity-70">Outdoor Events</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- WHY US — FIX: was bare <a> inside <ul>, now properly wrapped in <li> -->
+                            <li>
+                                <a class="nav-link" href="/why-us">why us</a>
+                            </li>
+
+                            <!-- MEDIA -->
+                            <li class="group">
+                                <a class="nav-link" href="/media">media</a>
+                                <div
+                                    class="absolute -ml-8 left-0 top-full w-full bg-black/95 border-t border-gray-800
+                                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                                        transition-all duration-300 z-50">
+                                    <div class="max-w-7xl mx-auto px-1 py-6 flex items-start gap-10 text-white">
+                                        <a href="/media#event_video" class="hover:opacity-70">Event Videos</a>
+                                        <a href="/media#gallery" class="hover:opacity-70">Gallery</a>
+                                        <a href="/media#behind_the_scenes" class="hover:opacity-70">Behind the
+                                            Scenes</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- BLOG -->
+                            <li class="group">
+                                <a class="nav-link" href="/blog">blog</a>
+                                <div
+                                    class="absolute -ml-8 left-0 top-full w-full bg-black/95 border-t border-gray-800
+                                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                                        transition-all duration-300 z-50">
+                                    <div class="max-w-7xl mx-auto px-1 py-6 flex items-start gap-10 text-white">
+                                        <a href="https://ledevents.asia/blog" class="hover:opacity-70">All Articles</a>
+                                        <a href="https://ledevents.asia/blog?type=Event%20Guides"
+                                            class="hover:opacity-70">Event Guides</a>
+                                        <a href="https://ledevents.asia/blog?type=LED%20Knowledge"
+                                            class="hover:opacity-70">LED Knowledge</a>
+                                        <a href="https://ledevents.asia/blog?type=Production%20Tips"
+                                            class="hover:opacity-70">Production Tips</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- PRODUCTS -->
+                            <li class="group">
+                                <a class="nav-link" href="/products">products</a>
+                                <div
+                                    class="absolute -ml-8 left-0 top-full w-full bg-black/95 border-t border-gray-800
+                                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
+                                        transition-all duration-300 z-50">
+                                    <div class="max-w-7xl mx-auto px-1 py-6 flex items-start gap-10 text-white">
+                                        <a href="https://envystage.com/"  target="_blank" rel="noopener noreferrer" class="hover:opacity-70">Fog & Effects</a>
+                                        <a href="https://ledmedia.com.kh/" target="_blank" rel="noopener noreferrer"
+                                            class="hover:opacity-70">LED Display Sales</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- CONTACT (no dropdown) -->
+                            <li>
+                                <a class="nav-link" href="/contact">contact</a>
+                            </li>
+
+                        </ul>
+
+                        <!-- SOCIAL ICONS -->
+                        <div class="flex items-center gap-4 text-black ml-auto -mr-10">
+                                                                                                <a href="https://www.facebook.com/ledevents2023"
+                                        class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                                    </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="https://www.linkedin.com/in/led-events-7141b6406/"
+                                        class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                        <i class="fa-brands fa-linkedin-in text-sm"></i>
+                                    </a>
+                                                                                                                                                                                                                                                                                                <a href="https://t.me/+85515999235"
+                                        class="animate-bounce w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                        <i class="fa-brands fa-telegram text-sm"></i>
+                                    </a>
+                                                                                                                                                                                                                                                                <a href="https://www.tiktok.com/@led.events"
+                                        class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                        <i class="fa-brands fa-tiktok text-sm"></i>
+                                    </a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="https://wa.me/85515999235?text=Hello%20I%20want%20more%20information"
+                                        class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                                    </a>
+                                                                                                                                                                <a href="https://www.youtube.com/@ledevent-s"
+                                        class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                        <i class="fa-brands fa-square-youtube text-sm"></i>
+                                    </a>
+                                                                                                                                                                                                                                                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('mobileMenu');
+                const isOpen = menu.classList.contains('translate-x-full');
+
+                menu.classList.toggle('translate-x-full');
+
+                // Lock / unlock body scroll
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            }
+
+            function closeMenu() {
+                document.getElementById('mobileMenu').classList.add('translate-x-full');
+                document.body.style.overflow = '';
+                document.querySelectorAll('.submenu').forEach(el => el.classList.add('hidden'));
+            }
+
+            function toggleSub(id) {
+                const target = document.getElementById(id);
+
+                // Close all other submenus
+                document.querySelectorAll('.submenu').forEach(el => {
+                    if (el !== target) el.classList.add('hidden');
+                });
+
+                target.classList.toggle('hidden');
+            }
+
+            // Smooth scroll for hash links inside mobile menu
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    const href = this.getAttribute('href');
+                    closeMenu();
+
+                    if (href && href.startsWith('#')) {
+                        const id = href.replace('#', '');
+                        setTimeout(() => {
+                            const target = document.getElementById(id);
+                            if (target) target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 150);
+                    }
+                });
+            });
+        </script>
+
+    
+    <main class="flex-1 relative">
+            <!-- HERO -->
+    <div class="relative h-[100vh] flex items-center justify-center bg-cover bg-center bg-no-repeat px-4"
+        style="background-image: url('https://ledevents.asia/storage/sections/OqCLrKwnLp28f1kETILZtWdsD3QqTlkIfjWurAXr.jpg');">
+
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <div class="relative z-10 text-white text-center">
+            <h1 class="uppercase leading-tight text-5xl sm:text-6xl md:text-7xl lg:text-[100px] font-bold tracking-widest">
+                OUR SERVICES
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-center text-lg lg:text-2xl leading-relaxed">
+                High-quality LED screens and visual solutions for events, exhibitions, and concerts in Cambodia—designed to captivate audiences and elevate every event.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- SERVICES LIST -->
+    <div
+        class="py-30 relative overflow-hidden text-white
+    bg-[radial-gradient(circle_at_center,_black_40%,_#1100FF33_100%)]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl md:text-[40px] pb-10 sm:pb-16 px-3 tracking-widest">
+                What We Provide
+            </h2>
+
+            <div class="space-y-16 px-5">
+
+                                    
+                    <div id="led-screen-rental"
+                        class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-3 px-8 rounded-md border border-[#272727] bg-gradient-to-r from-white/10 to-black">
+
+                        
+                                                    <img src="/storage/section-items/TUynY004rNzO2ttKIb3ZVhc3PSFbnAjn8ohMjcqw.png"
+                                class="md:col-span-2 w-full h-[276px] object-cover rounded-md" alt="LED Screen Rental">
+                        
+                        
+                        <div>
+                            <h2 class="text-1xl md:text-3xl mb-2 font-bold uppercase tracking-widest">LED Screen Rental
+                            </h2>
+
+                            <p class="mt-3 mb-3 text-sm">
+                                Provision of indoor and outdoor LED display screens, including installation and live technical operation.
+                            </p>
+
+                            <a href="https://ledevents.asia/service/4"
+                                class="mt-5 inline-block border px-6 py-2 transition-colors duration-300 hover:bg-white hover:text-black">
+                                More Detail
+                            </a>
+                        </div>
+
+                        
+                        
+                    </div>
+                                    
+                    <div id="stage-rental"
+                        class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-3 px-8 rounded-md border border-[#272727] bg-gradient-to-r from-white/10 to-black">
+
+                        
+                        
+                        
+                        <div>
+                            <h2 class="text-1xl md:text-3xl mb-2 font-bold uppercase tracking-widest">Stage Rental
+                            </h2>
+
+                            <p class="mt-3 mb-3 text-sm">
+                                Supply of modular staging systems, truss structures, and complete setup for various event types.
+                            </p>
+
+                            <a href="https://ledevents.asia/service/5"
+                                class="mt-5 inline-block border px-6 py-2 transition-colors duration-300 hover:bg-white hover:text-black">
+                                More Detail
+                            </a>
+                        </div>
+
+                        
+                                                    <img src="/storage/section-items/wKkfiqGaFtBpbAnvuKyM8nvwNH5eNQXDxqPJOfBh.jpg"
+                                class="md:col-span-2 w-full h-[276px] object-cover rounded-md" alt="Stage Rental">
+                        
+                    </div>
+                                    
+                    <div id="sound-system"
+                        class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-3 px-8 rounded-md border border-[#272727] bg-gradient-to-r from-white/10 to-black">
+
+                        
+                                                    <img src="/storage/section-items/vVC11JpKv5a7bgwO8rEaCh4D5zpMjCmT0fnKyc99.png"
+                                class="md:col-span-2 w-full h-[276px] object-cover rounded-md" alt="Sound System">
+                        
+                        
+                        <div>
+                            <h2 class="text-1xl md:text-3xl mb-2 font-bold uppercase tracking-widest">Sound System
+                            </h2>
+
+                            <p class="mt-3 mb-3 text-sm">
+                                High-quality professional audio equipment designed for concerts and large-scale events.
+                            </p>
+
+                            <a href="https://ledevents.asia/service/6"
+                                class="mt-5 inline-block border px-6 py-2 transition-colors duration-300 hover:bg-white hover:text-black">
+                                More Detail
+                            </a>
+                        </div>
+
+                        
+                        
+                    </div>
+                                    
+                    <div id="lighting-production"
+                        class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-3 px-8 rounded-md border border-[#272727] bg-gradient-to-r from-white/10 to-black">
+
+                        
+                        
+                        
+                        <div>
+                            <h2 class="text-1xl md:text-3xl mb-2 font-bold uppercase tracking-widest">Lighting Production
+                            </h2>
+
+                            <p class="mt-3 mb-3 text-sm">
+                                Creative stage lighting design, programming, and execution to enhance visual experience.
+                            </p>
+
+                            <a href="https://ledevents.asia/service/7"
+                                class="mt-5 inline-block border px-6 py-2 transition-colors duration-300 hover:bg-white hover:text-black">
+                                More Detail
+                            </a>
+                        </div>
+
+                        
+                                                    <img src="/storage/section-items/sjXA7sMYJMpxVYOM23ox9RWIb1iQksz0pSuJ88lY.jpg"
+                                class="md:col-span-2 w-full h-[276px] object-cover rounded-md" alt="Lighting Production">
+                        
+                    </div>
+                                    
+                    <div id="full-event-production"
+                        class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-3 px-8 rounded-md border border-[#272727] bg-gradient-to-r from-white/10 to-black">
+
+                        
+                                                    <img src="/storage/section-items/8waw73lVautcz3qZGE3uv2xu4oXiznKxb3e7vJBl.jpg"
+                                class="md:col-span-2 w-full h-[276px] object-cover rounded-md" alt="Full Event Production">
+                        
+                        
+                        <div>
+                            <h2 class="text-1xl md:text-3xl mb-2 font-bold uppercase tracking-widest">Full Event Production
+                            </h2>
+
+                            <p class="mt-3 mb-3 text-sm">
+                                End-to-end event solutions covering planning, coordination, and on-site management.
+                            </p>
+
+                            <a href="https://ledevents.asia/service/8"
+                                class="mt-5 inline-block border px-6 py-2 transition-colors duration-300 hover:bg-white hover:text-black">
+                                More Detail
+                            </a>
+                        </div>
+
+                        
+                        
+                    </div>
+                
+
+                
+
+            </div>
+        </div>
+
+        
+        
+        <div class="relative flex items-center justify-center overflow-hidden bg-black py-20 xl:py-0 xl:min-h-screen">
+
+            
+            
+
+            
+            <div class="flex flex-col items-center gap-5 md:hidden relative z-10">
+                                    <div
+                        class="group w-[239px]
+                bg-black text-white
+                flex flex-col justify-end
+                p-5 gap-3 relative cursor-pointer
+                transition-all duration-300
+                hover:bg-white hover:text-black">
+
+                        <img src="/storage/section-items/icons/NslGVAlR6s5fHFk2QvFQ0XZSDGGy2wTJPY7Rm2JR.png"
+                            class="absolute top-5 right-5 w-[38px] h-auto
+                           invert transition-all duration-300
+                           group-hover:invert-0" />
+
+                        <p class="text-[20px]">System</p>
+                        <p class="text-[12px] line-clamp-4">We operate with a structured and professional system to ensure every event is planned and executed efficiently, from preparation to final delivery.</p>
+                    </div>
+                                    <div
+                        class="group w-[239px]
+                bg-black text-white
+                flex flex-col justify-end
+                p-5 gap-3 relative cursor-pointer
+                transition-all duration-300
+                hover:bg-white hover:text-black">
+
+                        <img src="/storage/section-items/icons/l9O6AGADPJ1YH5SAOfdlaYFeLAjYpfDq7CUbRT7e.png"
+                            class="absolute top-5 right-5 w-[38px] h-auto
+                           invert transition-all duration-300
+                           group-hover:invert-0" />
+
+                        <p class="text-[20px]">Backup</p>
+                        <p class="text-[12px] line-clamp-4">Our team provides full backup support for all equipment and technical setups, ensuring uninterrupted performance and minimizing risks during your event.</p>
+                    </div>
+                                    <div
+                        class="group w-[239px]
+                bg-black text-white
+                flex flex-col justify-end
+                p-5 gap-3 relative cursor-pointer
+                transition-all duration-300
+                hover:bg-white hover:text-black">
+
+                        <img src="/storage/section-items/icons/HnTlzLFib64IrhJ3v130ilEvAQqh1GnWfBI3Pb9V.png"
+                            class="absolute top-5 right-5 w-[38px] h-auto
+                           invert transition-all duration-300
+                           group-hover:invert-0" />
+
+                        <p class="text-[20px]">Team</p>
+                        <p class="text-[12px] line-clamp-4">With a dedicated team of over 30 experienced professionals, we are capable of managing projects of all sizes with precision, coordination, and reliability.</p>
+                    </div>
+                                    <div
+                        class="group w-[239px]
+                bg-black text-white
+                flex flex-col justify-end
+                p-5 gap-3 relative cursor-pointer
+                transition-all duration-300
+                hover:bg-white hover:text-black">
+
+                        <img src="/storage/section-items/icons/NV0HzsUyxg0Ma59RdrR20orIed9KAeU6SwZGSFMo.png"
+                            class="absolute top-5 right-5 w-[38px] h-auto
+                           invert transition-all duration-300
+                           group-hover:invert-0" />
+
+                        <p class="text-[20px]">Execution</p>
+                        <p class="text-[12px] line-clamp-4">We focus on smooth and timely execution, ensuring that every detail is delivered according to plan with high standards of quality and professionalism.</p>
+                    </div>
+                                    <div
+                        class="group w-[239px]
+                bg-black text-white
+                flex flex-col justify-end
+                p-5 gap-3 relative cursor-pointer
+                transition-all duration-300
+                hover:bg-white hover:text-black">
+
+                        <img src="/storage/section-items/icons/4EqvSgpoyZm5mGK2606q6vFqmmgu65qGmbB7tQrZ.png"
+                            class="absolute top-5 right-5 w-[38px] h-auto
+                           invert transition-all duration-300
+                           group-hover:invert-0" />
+
+                        <p class="text-[20px]">Experience</p>
+                        <p class="text-[12px] line-clamp-4">With hands-on experience since 2012, we have successfully delivered a wide range of events, bringing expertise, reliability, and consistency to every project.</p>
+                    </div>
+                            </div>
+
+            
+            <div class="hidden md:block xl:hidden px-5 py-10 relative z-10">
+                <div class="max-w-6xl mx-auto flex flex-col gap-5">
+
+                    
+                    <div class="grid grid-cols-3">
+                                                    <div
+                                class="group w-[239px] h-[239px]
+                        bg-black text-white
+                        flex flex-col justify-end
+                        p-5 gap-3 relative cursor-pointer
+                        transition-all duration-300
+                        hover:bg-white hover:text-black">
+
+                                <img src="/storage/section-items/icons/NslGVAlR6s5fHFk2QvFQ0XZSDGGy2wTJPY7Rm2JR.png"
+                                    class="absolute top-5 right-5 w-[38px]
+                                   invert transition-all duration-300
+                                   group-hover:invert-0" />
+
+                                <p class="text-[20px]">System</p>
+                                <p class="text-[12px] line-clamp-4">We operate with a structured and professional system to ensure every event is planned and executed efficiently, from preparation to final delivery.</p>
+                            </div>
+                                                            <div class="w-[239px] h-[239px]"></div>
+                                                                                <div
+                                class="group w-[239px] h-[239px]
+                        bg-black text-white
+                        flex flex-col justify-end
+                        p-5 gap-3 relative cursor-pointer
+                        transition-all duration-300
+                        hover:bg-white hover:text-black">
+
+                                <img src="/storage/section-items/icons/l9O6AGADPJ1YH5SAOfdlaYFeLAjYpfDq7CUbRT7e.png"
+                                    class="absolute top-5 right-5 w-[38px]
+                                   invert transition-all duration-300
+                                   group-hover:invert-0" />
+
+                                <p class="text-[20px]">Backup</p>
+                                <p class="text-[12px] line-clamp-4">Our team provides full backup support for all equipment and technical setups, ensuring uninterrupted performance and minimizing risks during your event.</p>
+                            </div>
+                                                                        </div>
+
+                    
+                    <div class="grid grid-cols-3">
+                                                    <div></div>
+                            <div
+                                class="group w-[239px] h-[239px]
+                        bg-black text-white
+                        flex flex-col justify-end
+                        p-5 gap-3 relative cursor-pointer
+                        transition-all duration-300
+                        hover:bg-white hover:text-black">
+
+                                <img src="/storage/section-items/icons/HnTlzLFib64IrhJ3v130ilEvAQqh1GnWfBI3Pb9V.png"
+                                    class="absolute top-5 right-5 w-[38px]
+                                   invert transition-all duration-300
+                                   group-hover:invert-0" />
+
+                                <p class="text-[20px]">Team</p>
+                                <p class="text-[12px] line-clamp-4">With a dedicated team of over 30 experienced professionals, we are capable of managing projects of all sizes with precision, coordination, and reliability.</p>
+                            </div>
+                            <div></div>
+                                            </div>
+
+                    
+                    <div class="grid grid-cols-3">
+                                                    <div
+                                class="group w-[239px] h-[239px]
+                        bg-black text-white
+                        flex flex-col justify-end
+                        p-5 gap-3 relative cursor-pointer
+                        transition-all duration-300
+                        hover:bg-white hover:text-black">
+
+                                <img src="/storage/section-items/icons/NV0HzsUyxg0Ma59RdrR20orIed9KAeU6SwZGSFMo.png"
+                                    class="absolute top-5 right-5 w-[38px]
+                                   invert transition-all duration-300
+                                   group-hover:invert-0" />
+
+                                <p class="text-[20px]">Execution</p>
+                                <p class="text-[12px] line-clamp-4">We focus on smooth and timely execution, ensuring that every detail is delivered according to plan with high standards of quality and professionalism.</p>
+                            </div>
+                                                            <div></div>
+                                                                                <div
+                                class="group w-[239px] h-[239px]
+                        bg-black text-white
+                        flex flex-col justify-end
+                        p-5 gap-3 relative cursor-pointer
+                        transition-all duration-300
+                        hover:bg-white hover:text-black">
+
+                                <img src="/storage/section-items/icons/4EqvSgpoyZm5mGK2606q6vFqmmgu65qGmbB7tQrZ.png"
+                                    class="absolute top-5 right-5 w-[38px]
+                                   invert transition-all duration-300
+                                   group-hover:invert-0" />
+
+                                <p class="text-[20px]">Experience</p>
+                                <p class="text-[12px] line-clamp-4">With hands-on experience since 2012, we have successfully delivered a wide range of events, bringing expertise, reliability, and consistency to every project.</p>
+                            </div>
+                                                                        </div>
+
+                </div>
+            </div>
+
+            
+            <div class="hidden xl:block relative z-10 my-30">
+
+                
+                <div class="grid grid-cols-5">
+                                            <div
+                            class="group w-[239px] h-[239px]
+                    bg-black text-white
+                    flex flex-col justify-end
+                    p-5 gap-3 relative cursor-pointer
+                    transition-all duration-300
+                    hover:bg-white hover:text-black">
+
+                            <img src="/storage/section-items/icons/NslGVAlR6s5fHFk2QvFQ0XZSDGGy2wTJPY7Rm2JR.png"
+                                class="absolute top-5 right-5 w-[38px]
+                               invert transition-all duration-300
+                               group-hover:invert-0" />
+
+                            <p class="text-[20px]">System</p>
+                            <p class="text-[12px] line-clamp-4">We operate with a structured and professional system to ensure every event is planned and executed efficiently, from preparation to final delivery.</p>
+                        </div>
+                                                    <div></div>
+                                                                    <div
+                            class="group w-[239px] h-[239px]
+                    bg-black text-white
+                    flex flex-col justify-end
+                    p-5 gap-3 relative cursor-pointer
+                    transition-all duration-300
+                    hover:bg-white hover:text-black">
+
+                            <img src="/storage/section-items/icons/l9O6AGADPJ1YH5SAOfdlaYFeLAjYpfDq7CUbRT7e.png"
+                                class="absolute top-5 right-5 w-[38px]
+                               invert transition-all duration-300
+                               group-hover:invert-0" />
+
+                            <p class="text-[20px]">Backup</p>
+                            <p class="text-[12px] line-clamp-4">Our team provides full backup support for all equipment and technical setups, ensuring uninterrupted performance and minimizing risks during your event.</p>
+                        </div>
+                                                    <div></div>
+                                                                    <div
+                            class="group w-[239px] h-[239px]
+                    bg-black text-white
+                    flex flex-col justify-end
+                    p-5 gap-3 relative cursor-pointer
+                    transition-all duration-300
+                    hover:bg-white hover:text-black">
+
+                            <img src="/storage/section-items/icons/HnTlzLFib64IrhJ3v130ilEvAQqh1GnWfBI3Pb9V.png"
+                                class="absolute top-5 right-5 w-[38px]
+                               invert transition-all duration-300
+                               group-hover:invert-0" />
+
+                            <p class="text-[20px]">Team</p>
+                            <p class="text-[12px] line-clamp-4">With a dedicated team of over 30 experienced professionals, we are capable of managing projects of all sizes with precision, coordination, and reliability.</p>
+                        </div>
+                                                            </div>
+
+                
+                <div class="grid grid-cols-5 mt-5">
+                    
+                    <div></div>
+
+                                            <div
+                            class="group w-[239px] h-[239px]
+                    bg-black text-white
+                    flex flex-col justify-end
+                    p-5 gap-3 relative cursor-pointer
+                    transition-all duration-300
+                    hover:bg-white hover:text-black">
+
+                            <img src="/storage/section-items/icons/NV0HzsUyxg0Ma59RdrR20orIed9KAeU6SwZGSFMo.png"
+                                class="absolute top-5 right-5 w-[38px]
+                               invert transition-all duration-300
+                               group-hover:invert-0" />
+
+                            <p class="text-[20px]">Execution</p>
+                            <p class="text-[12px] line-clamp-4">We focus on smooth and timely execution, ensuring that every detail is delivered according to plan with high standards of quality and professionalism.</p>
+                        </div>
+                                                    <div></div>
+                                                                    <div
+                            class="group w-[239px] h-[239px]
+                    bg-black text-white
+                    flex flex-col justify-end
+                    p-5 gap-3 relative cursor-pointer
+                    transition-all duration-300
+                    hover:bg-white hover:text-black">
+
+                            <img src="/storage/section-items/icons/4EqvSgpoyZm5mGK2606q6vFqmmgu65qGmbB7tQrZ.png"
+                                class="absolute top-5 right-5 w-[38px]
+                               invert transition-all duration-300
+                               group-hover:invert-0" />
+
+                            <p class="text-[20px]">Experience</p>
+                            <p class="text-[12px] line-clamp-4">With hands-on experience since 2012, we have successfully delivered a wide range of events, bringing expertise, reliability, and consistency to every project.</p>
+                        </div>
+                                            
+                </div>
+
+            </div>
+
+        </div>
+
+
+        
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl md:text-[40px] py-10 md:py-30 sm:pb-16 px-3 tracking-widest">
+                Case Example
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 px-3">
+                
+                                                        <div class="p-5 rounded-md border border-white">
+                                                    <img src="/storage/section-items/CIU7F80kpNbWL2hF9OuFAioiGKk2rdAhm4naWyyf.png"
+                                alt="concert events" class="w-full h-[248px] object-cover">
+                                                <div class="flex flex-col gap-6 pt-5">
+                            <p class="text-[30px]">01</p>
+                            <p class="font-bold text-[25px] capitalize line-clamp-1">concert events</p>
+                            <p class="line-clamp-5">Delivering powerful LED screens, sound, and lighting solutions that enhance live performances and create unforgettable concert experiences for every audience.</p>
+                            <a href="https://ledevents.asia/projects?type=concert-events"
+                                class="mt-5 inline-block border px-6 py-2 text-center transition-colors duration-300 hover:bg-white hover:text-black">
+                                Find Out More
+                            </a>
+                        </div>
+                    </div>
+                                                        <div class="p-5 rounded-md border border-white">
+                                                    <img src="/storage/section-items/C3IN5o0YUhH7OeXkufZQC6qmaqee3tiiO3F3HIZr.jpg"
+                                alt="Corporate Events" class="w-full h-[248px] object-cover">
+                                                <div class="flex flex-col gap-6 pt-5">
+                            <p class="text-[30px]">02</p>
+                            <p class="font-bold text-[25px] capitalize line-clamp-1">Corporate Events</p>
+                            <p class="line-clamp-5">Providing professional event production for conferences, product launches, and corporate functions—ensuring a polished, impactful, and seamless experience.</p>
+                            <a href="https://ledevents.asia/projects?type=corporate-events"
+                                class="mt-5 inline-block border px-6 py-2 text-center transition-colors duration-300 hover:bg-white hover:text-black">
+                                Find Out More
+                            </a>
+                        </div>
+                    </div>
+                                                        <div class="p-5 rounded-md border border-white">
+                                                    <img src="/storage/section-items/sJaUDJIZSTdPl8NJcRf969TXoQPOEhRojZoLaVbV.jpg"
+                                alt="Festival Events" class="w-full h-[248px] object-cover">
+                                                <div class="flex flex-col gap-6 pt-5">
+                            <p class="text-[30px]">03</p>
+                            <p class="font-bold text-[25px] capitalize line-clamp-1">Festival Events</p>
+                            <p class="line-clamp-5">Supporting large-scale festivals with dynamic LED visuals and full technical setups to create vibrant, engaging, and memorable event atmospheres.</p>
+                            <a href="https://ledevents.asia/projects?type=festival-events"
+                                class="mt-5 inline-block border px-6 py-2 text-center transition-colors duration-300 hover:bg-white hover:text-black">
+                                Find Out More
+                            </a>
+                        </div>
+                    </div>
+                                                        <div class="p-5 rounded-md border border-white">
+                                                    <img src="/storage/section-items/XBc6pJmH71EkTpQuG3k1661vC0qh8l8HEXRoQW3w.jpg"
+                                alt="Outdoor Events" class="w-full h-[248px] object-cover">
+                                                <div class="flex flex-col gap-6 pt-5">
+                            <p class="text-[30px]">04</p>
+                            <p class="font-bold text-[25px] capitalize line-clamp-1">Outdoor Events</p>
+                            <p class="line-clamp-5">Reliable outdoor event solutions with weather-resistant LED screens and equipment, ensuring smooth performance in any environment.</p>
+                            <a href="https://ledevents.asia/projects?type=outdoor-events"
+                                class="mt-5 inline-block border px-6 py-2 text-center transition-colors duration-300 hover:bg-white hover:text-black">
+                                Find Out More
+                            </a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+
+    </div>
+    </main>
+
+    
+                        <div class="bg-black pt-5 relative overflow-hidden">
+
+    <!-- 🔵 GLOW (FIXED + PROPER ELLIPSE) -->
+    
+
+    <!-- MAIN CONTENT -->
+    <div class="relative z-10 bg-gradient-to-t from-[#1100FF]/30 to-black py-20">
+
+        <div
+            class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+        gap-10 md:gap-5 lg:gap-2  px-3 md:px-10 lg:px-6 xl:px-6 text-white">
+            
+            <div>
+                <div class="flex items-center justify-center lg:justify-normal gap-3">
+                    <img src="https://ledevents.asia/logo/LED-EVENT-PIMARY.png" class="w-full h-full">
+                </div>
+
+                <p class="mt-5 text-center lg:text-left">
+                    LED Events is a full-service event production company providing LED screens, staging, sound, and
+                    lighting solutions. Since 2012, we have been delivering reliable and high-quality event experiences
+                    for projects of all sizes.
+                </p>
+            </div>
+
+            
+            <div class="flex flex-col md:items-center">
+                <p class="text-[20px] font-bold -ml-0 lg:-ml-10">Company</p>
+                <ul class="flex flex-col mt-5 gap-4">
+
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/why-us">Why Us</a></li>
+                    <li><a href="/media">Media</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    
+
+                    
+                    <li class="font-bold text-white">Products</li>
+
+                    <li>
+                        <a href="https://fog-website.com" target="_blank"
+                            class="text-gray-400 hover:text-white transition">
+                            Fog & Effect
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://ledmedia.com.kh/" target="_blank"
+                            class="text-gray-400 hover:text-white transition">
+                            LED Display Sale
+                        </a>
+                    </li>
+
+                    <li><a href="/contact">Contact</a></li>
+
+                </ul>
+            </div>
+
+
+            
+            <div class="flex flex-col  gap-10">
+
+                <!-- CONTACT -->
+                <div>
+                    <p class="text-[20px] font-bold">Contact</p>
+
+                    <div class="flex flex-col mt-6 gap-5">
+                        <p class="flex items-start gap-3 leading-relaxed">
+                            <i class="fa-solid fa-location-dot mt-1"></i>
+                            #159A, Street 2011, Dei Thmey Village, Khmuonh Commune, Sen Sok District, Phnom Penh.
+                        </p>
+
+                        <p class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone"></i>
+                            015 999 235
+                        </p>
+
+                        <p class="flex items-center gap-3 break-all">
+                            <i class="fa-solid fa-envelope"></i>
+                            Info@ledevents.asia
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SOCIAL -->
+                <div>
+                    <p class="text-[22px] font-semibold mb-4">Follow us on</p>
+
+                    <div class="flex items-center gap-4 flex-wrap text-black">
+
+                                                    
+                                                            <a href="https://www.facebook.com/ledevents2023"
+                                    class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                                </a>
+                            
+                            
+                            
+                                                                                                                                        
+                            
+                            
+                            
+                                                                                        <a href="https://www.linkedin.com/in/led-events-7141b6406/"
+                                    class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                                                                                            
+                            
+                            
+                            
+                                                            <a href="https://t.me/+85515999235"
+                                    class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                    <i class="fa-brands fa-telegram text-sm"></i>
+                                </a>
+                                                                                                                                        
+                            
+                                                            <a href="https://www.tiktok.com/@led.events"
+                                    class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                    <i class="fa-brands fa-tiktok text-sm"></i>
+                                </a>
+                            
+                            
+                                                                                                                                        
+                            
+                            
+                            
+                                                                                                                    <a href="https://wa.me/85515999235?text=Hello%20I%20want%20more%20information"
+                                    class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                                                                                                <a href="https://www.youtube.com/@ledevent-s"
+                                    class="w-7 h-7 flex items-center justify-center bg-white rounded-full hover:bg-gray-200 transition">
+                                    <i class="fa-brands fa-square-youtube text-sm"></i>
+                                </a>
+                            
+                            
+                            
+                            
+                                                                                                            
+                    </div>
+                </div>
+
+                <div style="width: 100%; height: 200px;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.757068260551!2d104.85095277590435!3d11.569265188631892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109510061cb408b%3A0x415db76a8186c438!2sLED%20Media!5e0!3m2!1sen!2skh!4v1777529761700!5m2!1sen!2skh"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bg-black border-t border-gray-800">
+        <div
+            class="max-w-6xl mx-auto px-4 py-6
+        flex flex-col md:flex-row items-center justify-between gap-4 text-white text-sm">
+
+            <!-- LEFT -->
+            <div class="text-center md:text-left">
+                <p>© <span id="year"></span> LED EVENTS.</p>
+                <p class="text-gray-400">All rights reserved.</p>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="flex items-center gap-6">
+                <p onclick="openPrivacy()" class="hover:underline text-gray-300 hover:text-white transition">
+                    Privacy Policy
+                </p>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- PRIVACY MODAL -->
+    <div id="privacyModal" class="fixed inset-0 bg-black/70 hidden flex items-center justify-center z-50">
+
+        <div class="bg-white w-full max-w-3xl h-[80vh] rounded-lg shadow-lg flex flex-col">
+
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold">Privacy Policy</h2>
+                <button onclick="closePrivacy()" class="text-2xl font-bold">✕</button>
+            </div>
+
+            <div class="p-6 overflow-y-auto text-black leading-relaxed">
+                <p><strong>Privacy Policy</strong><br><strong>Introduction</strong></p><p>&nbsp;</p><p>LED Events<br>(referred to as “we”, “our”, or “us”) operates the websites and related digital platforms (collectively referred to as the “Websites”).</p><p>&nbsp;</p><p>This Privacy Policy outlines how we collect, use, disclose, store, and protect personal information obtained through our Websites and services.</p><p>&nbsp;</p><p>By accessing or using our Websites, you acknowledge that you have read, understood, and agreed to this Privacy Policy.</p><p>&nbsp;</p><p>We reserve the right to update this policy at any time. Changes will be effective immediately upon publication.</p><p>&nbsp;</p><p>Contact Information</p><p>&nbsp;</p><p>If you have any questions or concerns, please contact us:</p><p>&nbsp;</p><p>Email: [your email here]<br>Company: LED Events<br>Jurisdiction: Kingdom of Cambodia<br>Respecting Your Privacy</p><p>&nbsp;</p><p>We are committed to protecting your personal information and handling it responsibly.</p><p>&nbsp;</p><p>We do not intentionally collect sensitive personal data such as ethnicity, religion, political opinions, health information, or biometric data.</p><p>&nbsp;</p><p>All data processing complies with applicable laws and regulations in Cambodia.</p><p>&nbsp;</p><p>Collection of Personal Information</p><p>&nbsp;</p><p>We may collect personal information including:</p><p>&nbsp;</p><p>Name, email, phone number, and contact details<br>Information submitted through forms, inquiries, or registrations<br>Event inquiries, service requests, or project details<br>Communication records<br>Website usage data (IP address, browser, pages visited, etc.)<br>Cookies and tracking data<br>Use of Personal Information</p><p>&nbsp;</p><p>We use your information to:</p><p>&nbsp;</p><p>Provide and improve our event production services<br>Respond to inquiries and service requests<br>Plan, manage, and execute events<br>Personalize your experience on our Websites<br>Improve system performance and security<br>Conduct analysis and internal reporting<br>Communicate updates, services, or promotional offers</p><p>&nbsp;</p><p>You may opt out of marketing communications at any time.</p><p>&nbsp;</p><p>Disclosure of Personal Information</p><p>&nbsp;</p><p>We may share your information with:</p><p>&nbsp;</p><p>Clients, partners, or vendors involved in event execution<br>Service providers (IT, hosting, analytics, marketing)<br>Legal and financial advisors<br>Government authorities when required</p><p>&nbsp;</p><p>We do not sell your personal information.</p><p>&nbsp;</p><p>Data Security</p><p>&nbsp;</p><p>We implement reasonable security measures to protect your personal data.</p><p>&nbsp;</p><p>While we strive to ensure data security, no system is completely secure. We will act promptly in case of any security incident.</p><p>&nbsp;</p><p>International Data Transfer</p><p>&nbsp;</p><p>Your data may be stored or processed outside Cambodia through secure third-party systems. By using our services, you consent to such transfers.</p><p>&nbsp;</p><p>Access and Control of Your Data</p><p>&nbsp;</p><p>You may request to:</p><p>&nbsp;</p><p>Access your personal information<br>Correct or update your data<br>Request deletion (subject to legal obligations)</p><p>&nbsp;</p><p>Please contact us using the details above for any requests.</p><p>&nbsp;</p><p>Cookies and Tracking Technologies</p><p>&nbsp;</p><p>We use cookies to:</p><p>&nbsp;</p><p>Improve user experience<br>Remember preferences<br>Analyze website traffic</p><p>&nbsp;</p><p>You can disable cookies via browser settings, but some features may not function properly.</p><p>&nbsp;</p><p>Third-Party Websites</p><p>&nbsp;</p><p>Our Websites may include links to external platforms. We are not responsible for their privacy practices and encourage you to review their policies.</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script>
+    function openPrivacy() {
+        const modal = document.getElementById('privacyModal');
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePrivacy() {
+        const modal = document.getElementById('privacyModal');
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    // click outside
+    document.getElementById('privacyModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closePrivacy();
+        }
+    });
+</script>
+            
+    
+    <div id="scrollTopBtn"
+        class="fixed bottom-5 right-5 sm:bottom-20 sm:right-20 z-50 cursor-pointer hidden transition-all duration-300 hover:scale-110 "
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+
+        <img src="https://ledevents.asia/icons/down-arrow.png" alt="scroll top"
+            class="w-12 h-auto invert brightness-0 rotate-180">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        const scrollBtn = document.getElementById("scrollTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove("hidden");
+            } else {
+                scrollBtn.classList.add("hidden");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
